@@ -50,6 +50,9 @@ pipeline {
     }
 
     post {
+        always {
+        echo 'This runs after every build'
+        }
         success {
             echo "Build succeeded!"
         }
