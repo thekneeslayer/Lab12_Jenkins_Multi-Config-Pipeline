@@ -6,6 +6,11 @@ pipeline {
         MY_VERSION = "1.0.0"
     }
 
+    //adding parameters
+    parameters {
+        booleanParam(name: 'executeTests', defaultValue: true, description: 'Run tests?')
+    }
+
     
     stages {
         
@@ -13,6 +18,7 @@ pipeline {
         stage('Build'){
             steps{
                  echo "Using version: ${MY_VERSION}"
+                 bat "mvn -version"
             }
         }
 
@@ -25,6 +31,11 @@ pipeline {
             steps {
                 echo 'Conditional Test Stage Running'
             }
+            when {
+                expression { params.executeTests == true }
+            }
+            steps {
+                echo 'Running tests...'}
         }       
         
         stage('Checkout') {
