@@ -25,12 +25,12 @@ pipeline {
         
         //conditional
         stage('Test') {
-            when {
-                expression { true }   // run only if condition is true
-            }
-            steps {
-                echo 'Conditional Test Stage Running'
-            }
+            //when {
+            //    expression { true }   // run only if condition is true
+            //}
+            //steps {
+            //    echo 'Conditional Test Stage Running'
+            //}
             when {
                 expression { params.executeTests == true }
             }
