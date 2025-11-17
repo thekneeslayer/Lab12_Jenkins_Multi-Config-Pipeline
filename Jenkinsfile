@@ -18,7 +18,6 @@ pipeline {
         stage('Build'){
             steps{
                  echo "Using version: ${MY_VERSION}"
-                 bat "mvn -version"
             }
         }
 
