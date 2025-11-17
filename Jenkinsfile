@@ -5,8 +5,17 @@ pipeline {
         VENV = "venv"
     }
 
+    //conditional
     stages {
-
+        stage('Test') {
+            when {
+                expression { true }   // run only if condition is true
+            }
+            steps {
+                echo 'Conditional Test Stage Running'
+            }
+        }       
+        
         stage('Checkout') {
             steps {
                 echo "Pulling from GitHub..."
