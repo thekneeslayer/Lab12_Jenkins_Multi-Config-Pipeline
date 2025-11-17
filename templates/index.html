@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Demo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Dummy Flask App</h1>
+        <p>{{ message }}</p>
+
+        <a class="btn" href="/hello">Click Me</a>
+    </div>
+
+</body>
+</html>
