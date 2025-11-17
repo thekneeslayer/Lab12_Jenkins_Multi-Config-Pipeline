@@ -3,10 +3,21 @@ pipeline {
 
     environment {
         VENV = "venv"
+        MY_VERSION = "1.0.0"
     }
 
-    //conditional
+    
     stages {
+        
+        // Custom Environment Variable
+        stage('Build'){
+            steps{
+                 echo "Using version: ${MY_VERSION}"
+            }
+        }
+
+        
+        //conditional
         stage('Test') {
             when {
                 expression { true }   // run only if condition is true
